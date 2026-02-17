@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FixMyRide Mechanic Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+    height:100vh;
+    background:#050505;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:650px;height:650px;
+    background:radial-gradient(circle,#ff6a00,transparent);
+    top:-200px;left:-150px;
+    filter:blur(150px);
+    animation:move 10s infinite alternate;
+}
+body::after{
+    content:"";
+    position:absolute;
+    width:650px;height:650px;
+    background:radial-gradient(circle,#ff8c00,transparent);
+    bottom:-200px;right:-150px;
+    filter:blur(150px);
+    animation:move2 12s infinite alternate;
+}
+
+@keyframes move{to{transform:translate(150px,150px);}}
+@keyframes move2{to{transform:translate(-150px,-150px);}}
+
+/* card */
+.card{
+    position:relative;
+    z-index:2;
+    width:380px;
+    padding:40px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 50px rgba(255,106,0,.35);
+}
+
+h2{
+    text-align:center;
+    color:#ff6a00;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-size:13px;
+    opacity:.8;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    background:rgba(255,255,255,0.08);
+    color:white;
+}
+
+input:focus{
+    box-shadow:0 0 0 2px #ff6a00,0 0 15px #ff6a00;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff6a00,#ff8c00);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(255,106,0,.6);
+}
+button:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 45px rgba(255,106,0,.9);
+}
+
+.links{
+    text-align:center;
+    margin-top:14px;
+}
+.links a{
+    color:#ff6a00;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Register Mechanic</h2>
+
+<form action="register-mechanic.php" method="POST">
+
+<label>Workshop Name</label>
+<input type="text" name="name" required>
+
+<label>Phone</label>
+<input type="text" name="phone" required>
+
+<label>Address</label>
+<input type="text" name="address" required>
+
+<label>Working From</label>
+<input type="time" name="start_time" required>
+
+<label>Working Until</label>
+<input type="time" name="end_time" required>
+
+<label>Password</label>
+<input type="password" name="password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<div class="links">
+Already registered? <a href="login.html">Login here</a>
+</div>
+
+</div>
+
+</body>
+</html>

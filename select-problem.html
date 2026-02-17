@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Problem - FixMyRide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body{
+            background:#050505;
+            color:white;
+            text-align:center;
+        }
+
+        .container{
+            padding:80px 8%;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:30px;
+            margin-top:40px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.05);
+            padding:40px;
+            border-radius:20px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 0 25px #ff6a00;
+        }
+
+        .card h3{
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Select Your Problem</h1>
+    <p>Choose what happened to your vehicle</p>
+
+    <div class="grid">
+
+        <div class="card" onclick="choose('Puncture')">
+            <h3>🚗 Puncture</h3>
+        </div>
+
+        <div class="card" onclick="choose('Engine Issue')">
+            <h3>⚙ Engine Issue</h3>
+        </div>
+
+        <div class="card" onclick="choose('Battery Problem')">
+            <h3>🔋 Battery Problem</h3>
+        </div>
+
+        <div class="card" onclick="choose('Towing Required')">
+            <h3>🚛 Towing</h3>
+        </div>
+
+        <div class="card" onclick="choose('General Service')">
+            <h3>🛠 General Service</h3>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function choose(problem){
+    localStorage.setItem("problem", problem);
+    window.location="map.html";
+}
+</script>
+
+</body>
+</html>
